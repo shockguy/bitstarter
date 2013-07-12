@@ -1,10 +1,13 @@
 var express = require('express');
 
 var app = express.createServer(express.logger());
-var contents = fs.readFileSync('index.html');
+
+
 
 app.get('/', function(request, response) {
-  response.send(contents.toString());
+var contents = fs.readFileSync('index.html');
+var say = contents.toString();
+  response.send('This is a check 0712');
 });
 
 var port = process.env.PORT || 5000;
